@@ -1,0 +1,1 @@
+I recently started studying javascript and made this. The code might be really bad but i gave it my all from whatever I've grasped till now. I will continue to learn more and make more stuff, putting it on my github motivates me to keep moving forward!
