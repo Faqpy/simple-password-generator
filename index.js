@@ -1,4 +1,18 @@
-function passwdGen(passwdLength, includeLowercase, includeUppercase, includeNum, includeSymbol){
+function passwdGen() {
+
+    const lengthBox = document.getElementById("lengthBox");
+    const upperCheck = document.getElementById("includeUppercase-check");
+    const lowerCheck = document.getElementById("includeLowercase-check");
+    const symbolCheck = document.getElementById("includeSymbols-check");
+    const numberCheck = document.getElementById("includeNumbers-check");
+    const passwdHead = document.getElementById("passwdHead");
+    const passwdPara = document.getElementById("passwdPara");
+
+    const passwdLength = parseInt(lengthBox.value);
+    const includeUppercase = upperCheck.checked;
+    const includeLowercase = lowerCheck.checked;
+    const includeSymbol = symbolCheck.checked;
+    const includeNum = numberCheck.checked;
 
     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,32 +27,24 @@ function passwdGen(passwdLength, includeLowercase, includeUppercase, includeNum,
     allowedChars += includeNum ? numChars : "";
     allowedChars += includeSymbol ? symbolChars : "";
     
-    if(passwdLength <= 0){
-        console.log("ERR: The length of password cannot be less than 0.")
-    };
-    if(allowedChars.length === 0){
-        console.log("ERR: Select atleast one option to generate a password.")
-    };
-    for(let i=0; i<passwdLength; i++){
+    if (passwdLength <= 0 || isNaN(passwdLength)) {
+        passwdHead.textContent = "Error";
+        passwdPara.textContent = "Length must be greater than 0.";
+        return;
+    }
+    
+    if (allowedChars.length === 0) {
+        passwdHead.textContent = "Error";
+        passwdPara.textContent = "Select at least one character type.";
+        return;
+    }
+
+    for (let i = 0; i < passwdLength; i++) {
         const randomIndex = Math.floor(Math.random() * allowedChars.length);
         passwd += allowedChars[randomIndex];
     }
     
-    return passwd;
-};
-const passwdLength = window.prompt(`Enter the Require Length`);
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNum = true;
-const includeSymbol = true;
 
-const passwd = passwdGen(passwdLength, includeLowercase, includeUppercase, includeNum, includeSymbol);
-
-if(passwdLength === null || passwdLength <= 0){
-    document.getElementById("passwdHead").textContent = `Password couldn't be generated`
-    document.getElementById("passwdPara").textContent = `ERR: You can't have 0 or a negative integer as your password length`;
+    passwdHead.textContent = "Password Generated:";
+    passwdPara.textContent = passwd;
 }
-else{
-    document.getElementById("passwdPara").textContent = passwd;
-}
-

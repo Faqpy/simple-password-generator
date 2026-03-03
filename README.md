@@ -7,3 +7,6 @@ I also have more of these small projects such as a temperature-converter, dice-r
 ## Future Goals
 I also want to be able to get into android development soon, soon? NOW!
 It's about time I quit stalling.
+
+### 1.1
+Enhanced code readability, toggleable options, got rid of `window.prompt();`, yada yada yada :P
