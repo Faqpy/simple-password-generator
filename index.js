@@ -5,7 +5,6 @@ function passwdGen() {
     const lowerCheck = document.getElementById("includeLowercase-check");
     const symbolCheck = document.getElementById("includeSymbols-check");
     const numberCheck = document.getElementById("includeNumbers-check");
-    const passwdHead = document.getElementById("passwdHead");
     const passwdPara = document.getElementById("passwdPara");
 
     const passwdLength = parseInt(lengthBox.value);
@@ -28,14 +27,12 @@ function passwdGen() {
     allowedChars += includeSymbol ? symbolChars : "";
     
     if (passwdLength <= 0 || isNaN(passwdLength)) {
-        passwdHead.textContent = "Error";
-        passwdPara.textContent = "Length must be greater than 0.";
+        passwdPara.textContent = "ERR: Length must be greater than 0.";
         return;
     }
     
     if (allowedChars.length === 0) {
-        passwdHead.textContent = "Error";
-        passwdPara.textContent = "Select at least one character type.";
+        passwdPara.textContent = "ERR: Select at least one character type.";
         return;
     }
 
@@ -45,6 +42,5 @@ function passwdGen() {
     }
     
 
-    passwdHead.textContent = "Password Generated:";
     passwdPara.textContent = passwd;
 }
