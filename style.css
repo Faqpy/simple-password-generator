@@ -1,13 +1,57 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+:root{
+  --sys-background-color: #1b1b1f;
+  --sys-primary-color: #fdfbff;
+  --sys-btn-radius: 9999px;
 }
-
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: var(--sys-primary-color);
+  background-color: var(--sys-background-color);
+}
+#lengthBox{
+  border: none;
+  text-align: center;
+  padding: 12px;
+  border-radius: var(--sys-btn-radius);
+  font-size: 20px;
+  margin-top: 20px;
+}
+#passwdPara{
+  font-family: monospace;
+  overflow-x: auto;
+  color: hsl(0, 0%, 78%);
+}
+body label{
+  font-size: 1.2rem;
+}
+body .titleStyling {
+  color: hsl(228, 100%, 76%);
+}
+#genBtn{
+  background-color: hsl(228, 100%, 76%);
+  color: var(--sys-background-color);
+  border: none;
+  border-radius: var(--sys-btn-radius);
+  font-size: 20px;
+  padding: 12px;
+  margin-top: 20px;
+  transition: background-color .25s;
+  cursor: pointer;
+}
+#genBtn:hover{
+  background-color: hsl(228, 100%, 83%);
+}
+#genBtn:active{
+  background-color: hsl(228, 100%, 65%);
+}
 @media (min-width: 600px) {
   body {
     padding: 40px;
   }
-
   .container {
     display: flex; 
     gap: 20px;

@@ -10,3 +10,5 @@ It's about time I quit stalling.
 
 ### 1.1
 Enhanced code readability, toggleable options, got rid of `window.prompt();`, yada yada yada :P
+### 1.2
+"Rough" CSS properties added 💀
