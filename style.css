@@ -41,6 +41,7 @@ body .titleStyling {
   margin-top: 20px;
   transition: background-color .25s;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 #genBtn:hover{
   background-color: hsl(228, 100%, 83%);
